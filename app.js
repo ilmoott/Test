@@ -12,16 +12,9 @@ const menu = document.querySelector(DOMStrings.menu);
 const menu_link = document.querySelectorAll(DOMStrings.menu_link);
 const menu_list = document.querySelectorAll(DOMStrings.menu_list);
 
-menu_link.forEach(function(e){
-    e.addEventListener('click',function(){
-        menu.checked = false;
-    });
-    if(menu.checked === false){
-        menu_list.style.display = "none";
-    }else{
-        menu_list.style.display = "block";
-    }
-});
+
+
+
 
 
 
@@ -46,3 +39,13 @@ popup.addEventListener('click',function(e){
 //     }
 // });
 
+document.querySelector('.navigation').addEventListener('click', (e)=>{
+    if(e.target.className === 'navigation__checkbox'){
+        if(e.target.parentNode.lastElementChild.childNodes[1].style.display = "none"){
+            e.target.parentNode.lastElementChild.childNodes[1].style.display = "block";
+        }else{
+            e.target.parentNode.lastElementChild.childNodes[1].style.display = "none";
+        }
+        
+    }
+});
